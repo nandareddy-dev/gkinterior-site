@@ -1,0 +1,42 @@
+export const serviceList = [
+  {
+    slug: "residential-interiors",
+    title: "Residential Interiors",
+    short: "Full home interiors, design to handover",
+    text: "Full home interiors for apartments and villas, covering layout, false ceiling, wardrobes, lighting, furniture and styling. One team handles everything from design to handover.",
+    points: ["2D & 3D designs", "Material selection", "Site supervision", "Handover & cleaning"],
+    image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1600",
+  },
+  {
+    slug: "modular-kitchens",
+    title: "Modular Kitchens",
+    short: "Smart, durable and easy to clean",
+    text: "Kitchens planned around how you cook, with quality hardware, smart storage and easy-to-clean finishes that stay good for years.",
+    points: ["L, U & parallel layouts", "Quartz / granite counters", "Soft-close fittings", "Chimney & hob planning"],
+    image: "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1600",
+  },
+  {
+    slug: "false-ceiling",
+    title: "False Ceiling",
+    short: "Gypsum, POP and designer ceilings",
+    text: "Elegant false ceilings that hide wiring, add depth and make your rooms look taller and brighter, with cove lighting and designer patterns to match your interiors.",
+    points: ["Gypsum & POP ceilings", "Cove & profile lighting", "Designer patterns", "Fast, clean installation"],
+    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600",
+  },
+  {
+    slug: "commercial-interiors",
+    title: "Commercial Interiors",
+    short: "Offices, clinics, cafes and showrooms",
+    text: "Offices, clinics, cafes and showrooms designed to look good and work well for your business, delivered on a tight timeline.",
+    points: ["Space planning", "Branding elements", "Fast turnaround", "Budget-friendly options"],
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600",
+  },
+  {
+    slug: "furniture-decor",
+    title: "Furniture & Decor",
+    short: "Custom furniture, lighting and styling",
+    text: "Custom furniture, lighting and decor chosen to match your space and style, built to fit your rooms exactly.",
+    points: ["Custom sofas & beds", "TV units & study tables", "Lighting design", "Curtains & accessories"],
+    image: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1600",
+  },
+];
