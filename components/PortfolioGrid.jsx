@@ -1,17 +1,24 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 export default function PortfolioGrid({ projects }) {
   const categories = ["All", ...new Set(projects.map((p) => p.category))];
-  const [active, setActive] = useState("All");
+  const param = useSearchParams().get("category");
+  const fromUrl = categories.includes(param) ? param : "All";
+  const [active, setActive] = useState(fromUrl);
+
+  // Navbar menu nundi category marinappudu filter update
+  useEffect(() => {
+    setActive(fromUrl);
+  }, [fromUrl]);
 
   const count = (c) => (c === "All" ? projects.length : projects.filter((p) => p.category === c).length);
   const filtered = active === "All" ? projects : projects.filter((p) => p.category === active);
 
   return (
     <>
-      {/* Filter pills */}
       <div className="mb-14 flex flex-wrap justify-center gap-3">
         {categories.map((c) => (
           <button
@@ -35,7 +42,6 @@ export default function PortfolioGrid({ projects }) {
         ))}
       </div>
 
-      {/* Grid (key marinappudu animation malli run avutundi) */}
       <div key={active} className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((p, i) => (
           <Link
@@ -49,16 +55,11 @@ export default function PortfolioGrid({ projects }) {
               alt={`${p.title} interior design by GK Home Interiors`}
               className="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-110"
             />
-
-            {/* Category tag */}
             <span className="absolute left-4 top-4 bg-white/90 px-3 py-1 text-[10px] uppercase tracking-widest text-stone-800 backdrop-blur">
               {p.category}
             </span>
-
-            {/* Bottom gradient + info */}
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-6 pt-24 text-white">
               <h3 className="font-serif text-2xl">{p.title}</h3>
-              {/* Mobile: always visible. Desktop: hover lo vastundi */}
               <div className="mt-3 max-h-24 overflow-hidden opacity-100 transition-all duration-500 md:mt-0 md:max-h-0 md:opacity-0 md:group-hover:mt-3 md:group-hover:max-h-24 md:group-hover:opacity-100">
                 <p className="text-xs text-stone-300">
                   📍 {p.location} &nbsp;·&nbsp; {p.area}
