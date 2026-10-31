@@ -167,7 +167,7 @@ export default function LeadPopup() {
 
             {status === "error" && (
               <p className="rounded-lg bg-red-50 p-3 text-xs text-red-700">
-                Something went wrong. Please call us on +91 9742483054.
+                Something went wrong. Please call us on +91 7330952166.
               </p>
             )}
             <p className="text-center text-[11px] text-stone-400">We respect your privacy. No spam.</p>

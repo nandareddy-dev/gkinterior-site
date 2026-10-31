@@ -1,3 +1,4 @@
+
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
@@ -11,15 +12,16 @@ const inter = Inter({
   variable: "--font-inter",
   display: "swap",
 });
+
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
   display: "swap",
 });
 
-// Vercel deploy ayyaka, mee real domain ikkada pettandi
 const SITE_URL = "https://www.gkhomeinteriors.in";
 const SITE_NAME = "GK Home Interiors";
+
 const DESCRIPTION =
   "Residential and commercial interior design, modular kitchens and full home interiors in Hyderabad. Free consultation and 3D designs.";
 
@@ -65,7 +67,11 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+    },
   },
   formatDetection: { telephone: false },
 };
@@ -76,7 +82,6 @@ export const viewport: Viewport = {
   themeColor: "#0b4ea2",
 };
 
-// Google ki mee business details (local SEO)
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
@@ -85,12 +90,13 @@ const jsonLd = {
   image: `${SITE_URL}/og-image.jpg`,
   logo: `${SITE_URL}/images/gk-ledger-logo.png`,
   description: DESCRIPTION,
-  telephone: "+919742483054",
+  telephone: "+917330952166",
   email: "info@gkhomeinteriors.in",
   priceRange: "₹₹",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "301/4, 4th Floor, Alluri Trade Centre, KPHB Rd, Bhagya Nagar Colony",
+    streetAddress:
+      "301/4, 4th Floor, Alluri Trade Centre, KPHB Rd, Bhagya Nagar Colony",
     addressLocality: "Hyderabad",
     addressRegion: "Telangana",
     postalCode: "500072",
@@ -100,21 +106,31 @@ const jsonLd = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ],
       opens: "09:30",
       closes: "18:30",
     },
   ],
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
         id="top"
-        className={`${inter.variable} ${playfair.variable} font-sans antialiased`}
+        className={`${inter.variable} ${playfair.variable} flex min-h-screen flex-col font-sans antialiased`}
       >
-        {/* Keyboard users ki: Tab nokkithe "Skip to content" vastundi */}
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-amber-700 focus:px-5 focus:py-2 focus:text-sm focus:text-white"
@@ -123,11 +139,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
 
         <Navbar />
-        <main id="main">{children}</main>
-        <Footer />
-        <WhatsAppButton />
-<LeadPopup />
 
+        {/* Main content takes remaining available height */}
+        <main id="main" className="w-full flex-1">
+          {children}
+        </main>
+
+        {/* Footer stays at the bottom when content is short */}
+        <Footer />
+
+        {/* Floating components */}
+        <WhatsAppButton />
+        <LeadPopup />
+
+        {/* Local SEO structured data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
