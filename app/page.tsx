@@ -111,13 +111,13 @@ export default function Home() {
               Get Free Quote
             </Link>
             <a
-              href="tel:+919742483054"
+              href="tel:+917330952166"
               className="rounded-full border border-stone-400 px-6 py-3 text-xs uppercase tracking-widest transition hover:border-amber-700 hover:text-amber-700"
             >
               Call now
             </a>
             <a
-              href="https://wa.me/919742483054"
+              href="https://wa.me/917330952166"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full bg-green-600 px-6 py-3 text-xs uppercase tracking-widest text-white transition hover:bg-green-700"
@@ -400,7 +400,7 @@ export default function Home() {
                   Tell us your ideas. Our team will help you plan the perfect space for your lifestyle.
                 </p>
                 <a
-                  href="https://wa.me/919742483054"
+                  href="https://wa.me/917330952166"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-7 inline-flex items-center justify-center gap-3 rounded-lg bg-[#80BD16] px-7 py-4 text-sm font-bold text-[#17365d] shadow-md transition hover:-translate-y-1 hover:bg-[#91D32A] hover:shadow-lg"
@@ -503,10 +503,10 @@ export default function Home() {
               Get Free Quote
             </Link>
             <a
-              href="tel:+919742483054"
+              href="tel:+917330952166"
               className="rounded-full border border-white/60 px-8 py-3.5 text-xs uppercase tracking-widest transition hover:bg-white hover:text-stone-900"
             >
-              Call +91 9742483054
+              Call +91 7330952166
             </a>
           </div>
         </Reveal>

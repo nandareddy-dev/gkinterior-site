@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import { serviceList } from "@/data/servicesData";
 import { projects } from "@/data/projects";
 
-const PHONE = "+91 9742483054";
-const PHONE_LINK = "+919742483054";
+const PHONE = "+91 7330952166";
+const PHONE_LINK = "+917330952166";
 const HOURS = "Mon - Sat: 9:30 AM - 6:30 PM";
 const LOGO = "/images/gk-logo.png";
 

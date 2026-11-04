@@ -10,9 +10,9 @@ export const metadata = {
 };
 
 // Company details
-const PHONE = "+91 97424 83054";
-const PHONE_LINK = "+919742483054";
-const WHATSAPP = "919742483054";
+const PHONE = "+917330952166";
+const PHONE_LINK = "+917330952166";
+const WHATSAPP = "917330952166";
 const EMAIL = "info@gkhomeinteriors.in";
 
 const ADDRESS = [

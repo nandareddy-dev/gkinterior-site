@@ -1,7 +1,7 @@
 export default function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/919742483054?text=Hi%20GK%20Home%20Interiors%2C%20I%20want%20to%20know%20about%20your%20interior%20design%20services"
+      href="https://wa.me/917330952166?text=Hi%20GK%20Home%20Interiors%2C%20I%20want%20to%20know%20about%20your%20interior%20design%20services"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"

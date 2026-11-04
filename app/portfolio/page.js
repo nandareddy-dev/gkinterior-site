@@ -48,10 +48,10 @@ export default function PortfolioPage() {
               Get Free Quote
             </Link>
             <a
-              href="tel:+919742483054"
+              href="tel:+917330952166"
               className="rounded-full border border-white/60 px-8 py-3.5 text-xs uppercase tracking-widest transition hover:bg-white hover:text-stone-900"
             >
-              Call +91 9742483054
+              Call +91 7330952166
             </a>
           </div>
         </Reveal>
