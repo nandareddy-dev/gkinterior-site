@@ -1,6 +1,6 @@
-
 import Link from "next/link";
 import { serviceList } from "@/data/servicesData";
+import { areas } from "@/app/areas/areasData";
 
 const PHONE = "+91 7330952166";
 const PHONE_LINK = "+917330952166";
@@ -207,7 +207,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Section 2: Services */}
+        {/* Section 2: Services + Areas We Serve */}
         <div>
           <ColHeading>Our Services</ColHeading>
 
@@ -220,6 +220,20 @@ export default function Footer() {
               </li>
             ))}
           </ul>
+
+          <div className="mt-6">
+            <ColHeading>Areas We Serve</ColHeading>
+
+            <ul className="space-y-3 text-sm">
+              {areas.map((a) => (
+                <li key={a.slug}>
+                  <FooterLink href={`/areas/${a.slug}`}>
+                    Interior Designers in {a.name}
+                  </FooterLink>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         {/* Section 3: Contact */}
