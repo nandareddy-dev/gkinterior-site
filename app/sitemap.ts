@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/data/projects";
 import { serviceList } from "@/data/servicesData";
+import { areas } from "./areas/areasData";
 
-const SITE_URL = "https://www.gkhomeinteriors.in"; // mee real domain
-const UPDATED = "2026-11-10"; // site marchinappudu ee date marchandi
+const SITE_URL = "https://www.gkhomeinteriors.in";
+const UPDATED = "2026-11-17";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const fixed = ["", "/about", "/services", "/portfolio", "/contact"].map((p) => ({
@@ -21,5 +22,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: UPDATED,
     priority: 0.6,
   }));
-  return [...fixed, ...services, ...work];
+  const areaPages = areas.map((a) => ({
+    url: `${SITE_URL}/areas/${a.slug}`,
+    lastModified: UPDATED,
+    priority: 0.8,
+  }));
+  return [...fixed, ...services, ...areaPages, ...work];
 }
