@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import { serviceList } from "@/data/servicesData";
 
@@ -16,7 +15,7 @@ const LOGO = "/images/gk-logo.png";
 const socials = [
   {
     label: "Instagram",
-    href: "https://instagram.com/",
+    href: "https://www.instagram.com/gk_homeinteriors/",
     hover: "hover:border-pink-500 hover:bg-pink-500",
     path: (
       <>
@@ -28,7 +27,7 @@ const socials = [
   },
   {
     label: "Facebook",
-    href: "https://facebook.com/",
+    href: "https://www.facebook.com/profile.php?id=61596055080830",
     hover: "hover:border-blue-600 hover:bg-blue-600",
     path: (
       <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
@@ -36,7 +35,7 @@ const socials = [
   },
   {
     label: "YouTube",
-    href: "https://youtube.com/",
+    href: "https://www.youtube.com/@GKHomeinteriors",
     hover: "hover:border-red-600 hover:bg-red-600",
     path: (
       <>
@@ -47,7 +46,7 @@ const socials = [
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/",
+    href: "https://linkedin.com/", // TODO: mee LinkedIn page link ikkada pettandi
     hover: "hover:border-sky-700 hover:bg-sky-700",
     path: (
       <>
@@ -319,23 +318,48 @@ export default function Footer() {
       </div>
 
       {/* Bottom Copyright Bar */}
-      <div className="border-t border-stone-200 bg-stone-50">
-        <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-center gap-3 px-5 py-4 text-center text-xs text-stone-500 md:flex-row">
+      {/* Bottom Copyright Bar */}
+<div className="border-t border-stone-200 bg-stone-50">
+  <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-3 px-5 py-4 text-center text-xs text-stone-500 md:grid-cols-3">
 
-          <p>
-            © 2026 GK Home Interiors. All rights reserved.
-          </p>
+    {/* Left spacer: copyright ni center lo unchadaniki */}
+    <div className="hidden md:block" />
 
-          {/* Back to Top */}
-          <a
-            href="#top"
-            aria-label="Back to top"
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-300 text-xl text-blue-700 transition duration-300 hover:-translate-y-1 hover:border-blue-700 hover:bg-blue-700 hover:text-white md:absolute md:right-5"
-          >
-            ↑
-          </a>
-        </div>
-      </div>
+    {/* Center: Copyright */}
+    <p>© 2026 GK Home Interiors. All rights reserved.</p>
+
+    {/* Right: Legal links + Back to Top */}
+    <div className="flex items-center justify-center gap-4 md:justify-end">
+      <nav aria-label="Legal" className="flex items-center gap-3">
+        <Link
+          href="/privacy-policy"
+          className="transition hover:text-blue-700"
+        >
+          Privacy Policy
+        </Link>
+
+        <span aria-hidden="true" className="text-stone-300">
+          |
+        </span>
+
+        <Link
+          href="/terms-of-use"
+          className="transition hover:text-blue-700"
+        >
+          Terms of Use
+        </Link>
+      </nav>
+
+      <a
+        href="#top"
+        aria-label="Back to top"
+        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-stone-300 text-xl text-blue-700 transition duration-300 hover:-translate-y-1 hover:border-blue-700 hover:bg-blue-700 hover:text-white"
+      >
+        ↑
+      </a>
+    </div>
+  </div>
+</div>
     </footer>
   );
 }
